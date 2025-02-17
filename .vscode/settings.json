@@ -1,0 +1,7 @@
+{
+  "rust-analyzer.linkedProjects": [
+    "chapter-1/hello_cargo/Cargo.toml",
+    "chapter-2/guessing_game/Cargo.toml"
+  ],
+  "cSpell.words": ["println", "rustup"]
+}
