@@ -10,13 +10,17 @@
 
 - When using `println!` macro the string `"You guessed: {guess}"` has
   placeholders ({} - the book actually says "like crab claws holding the value
-  in place"😊) that work like a JavaScript/Typescript template literal (example:
-  `` `You guessed: ${guess}` ``).
+  in place"😊) that work like a JavaScript/Typescript string literal type
+  (example: `` `You guessed: ${guess}` ``).
 
 ## Handling Variables
 
 - Variables are immutable by default. To make a variable mutable, use the `mut`
   keyword.
+- There is a feature called shadowing that allows you to redeclare a variable
+  with the same name as a previous variable. This is useful when you want to
+  change the value of a variable but keep the same name. Particularly useful
+  when casting one type to another.
 
 ## Handling Comments
 
@@ -63,3 +67,36 @@
 - Crates are the compiled binary or library.
 - Cargo does a lot of work to protect your project from accidental upgrades that
   could break your code.
+
+## Regarding Deprecations
+
+- The rust analyzer will show you deprecations and make recommendations for the
+  new way to do things.
+
+## Regarding Enums
+
+- It's clear that this is a powerful feature in Rust. It's "Enums Done
+  Correctly".
+- The Result type is an enum.
+- The Ordering types is an enum.
+  - This is interesting because it's a way to handle comparisons using Enums.
+  - It handles ordering by using higher order concepts like Less, Greater, and
+    Equal.
+- The Option type is an enum.
+- Variants almost look like options. For example a `Result` type has two
+  variants: `Ok` and `Err`. An `Option` type has two variants: `Some` and
+  `None`. From the implementors perspective it's a variant but from the
+  consumer's perspective it's an option that has to be accounted for.
+
+## Regarding `match`
+
+- `match` is a control flow operator that is used to compare a value to a
+  pattern and execute different code based on the value.
+- `match` is a powerful control flow operator that is used to handle enums.
+- `match` is a control flow operator that is used to handle options.
+- There is no switch statement in Rust which is the closest control flow
+  operator in other languages.
+- `match` provides certain guarantees that other control flow operators do not.
+  For example, `match` guarantees that all possible cases are handled.
+- Changing from an `expect` to a `match` is a good way to handle errors.
+- The `match` operator is actually a good way to handle errors.
